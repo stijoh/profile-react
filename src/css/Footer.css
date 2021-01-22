@@ -1,0 +1,26 @@
+.box-div {
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  margin: 20px 0px;
+  text-align: center;
+  opacity: .7;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.list li {
+  display: inline;
+  padding: 10px;
+}
+.list i {
+  font-size: 50px;
+  color: #006699;
+}
+.list i:hover {
+  color: black;
+}
