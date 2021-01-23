@@ -1,10 +1,10 @@
-const Header = () => {
+const Header = ({ skills }) => {
   return (
     <div className="box-div2">
       <img
         src="profile-img.png"
         className="img-circle element-animation"
-        alt="Stian's profile picture"
+        alt="Stian's profile"
       />
       <h1>Stian Johansen</h1>
       <p>
