@@ -4,11 +4,16 @@ import Header from "./components/Header";
 import "./App.css";
 
 function App() {
-  const [skills, setSkills] = useState();
-  const fetchData = () => fetch("http://localhost:3500/skills");
+  const [skills, setSkills] = useState([]);
+
+  const fetchData = async () => {
+      const response = await fetch("http://localhost:3500/skills");
+      const data = await response.json();
+      setSkills(data.skills);
+    }
 
   useEffect(() => {
-    fetchData().then(async (data) => setSkills(await data.json()));
+    fetchData();
   }, []);
 
   return (
