@@ -198,11 +198,26 @@ a:hover {
   text-align: center;
 }
 
+.box-skills {
+  background-color: white;
+  padding: 40px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 20px 0px;
+  text-align: left;
+}
+
 .list {
   list-style: none;
   padding-left: 0px;
 }
 
+.list-column {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 .list-portfolio {
   list-style: none;
   padding-left: 0px;
