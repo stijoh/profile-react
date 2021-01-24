@@ -8,7 +8,7 @@ function App() {
     const [skills, setSkills] = useState([]);
 
     const fetchData = async () => {
-        const response = await fetch("http://localhost:3500/skills");
+        const response = await fetch("http://192.168.0.100:3500/skills");
         const data = await response.json();
         setSkills(data);
     };
