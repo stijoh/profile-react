@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <div className="box-div2">
+        <div className="box-header">
             <img
                 src="profile-img.png"
                 className="img-circle element-animation"
