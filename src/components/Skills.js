@@ -1,8 +1,8 @@
 const Skills = ({ skills }) => {
     return (
         <div>
-            <div className="box-div2">
-                <ul>
+            <div className="box-skills">
+                <ul className="list-column">
                     {skills.map((skill) => (
                         <li key={skill.id}>{skill.skill}</li>
                     ))}
