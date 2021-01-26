@@ -1,5 +1,7 @@
-import { findByLabelText } from "@testing-library/react";
 import React from "react";
+import { Formik } from "formik";
+import { TextField, Button } from "@material-ui/core";
+
 
 const Admin = () => {
     const loginData = () => {
@@ -20,7 +22,48 @@ const Admin = () => {
         const data = await response.json();
         console.log(data);
     };
-    return <div>Hello from admin ballefaen!</div>;
+    return (
+      <div>
+        <div>Hello from admin ballefaen!</div>
+          <div>
+          <Formik
+            initialValues={{ Email: '', Password: '' }}
+            onSubmit={(values, actions) => {
+              console.log(values)
+
+            }}
+          >
+            {props => (
+              <form onSubmit={props.handleSubmit}>
+                <div>
+                <TextField
+                  type="text"
+                  onChange={props.handleChange}
+                  onBlur={props.handleBlur}
+                  value={props.values.name}
+                  name="Email"
+                />
+                {props.errors.name && <div id="feedback">{props.errors.name}</div>}
+                </div>
+                <div>
+                  <TextField
+                    type="text"
+                    onChange={props.handleChange}
+                    onBlur={props.handleBlur}
+                    value={props.values.name}
+                    name="Password"
+                  />
+                  {props.errors.name && <div id="feedback">{props.errors.name}</div>}
+                </div>
+                <div>
+                <Button type="submit">Submit</Button>
+                </div>
+              </form>
+            )}
+          </Formik>
+          </div>
+      </div>
+    )
 };
 
 export default Admin;
