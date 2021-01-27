@@ -9,7 +9,6 @@ function Home() {
     const fetchData = async () => {
         const response = await fetch("http://192.168.0.100:3500/skills");
         const data = await response.json();
-        console.log(data);
         setSkills(data);
     };
 
