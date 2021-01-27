@@ -1,9 +1,8 @@
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import React from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { useQuery } from "react-query";
-import { CenterFocusStrong } from "@material-ui/icons";
 
 const Skills = () => {
     const { isLoading, error, data } = useQuery("fetchSkills", () =>
@@ -19,8 +18,8 @@ const Skills = () => {
                     {isLoading ? (
                         <div>
                             <Loader
-                                type="Puff"
-                                color="#00BFFF"
+                                type="Hearts"
+                                color="#006699"
                                 height={100}
                                 width={100}
                                 timeout={3000} //3 secs
