@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
-import { TextField, Button, Box, Container } from "@material-ui/core";
+import { TextField, Button, Box } from "@material-ui/core";
+import { Card } from "reactstrap";
 
 const LoginForm = ({ setToken }) => {
     return (
@@ -26,7 +27,7 @@ const LoginForm = ({ setToken }) => {
                 }}
             >
                 {(props) => (
-                    <div className="box-login">
+                    <Card body className="text-center">
                         <div>
                             <h1>Login:</h1>
                         </div>
@@ -76,7 +77,7 @@ const LoginForm = ({ setToken }) => {
                                 </div>
                             </form>
                         </Box>
-                    </div>
+                    </Card>
                 )}
             </Formik>
         </div>
