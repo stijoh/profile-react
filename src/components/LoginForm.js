@@ -1,10 +1,10 @@
 import React from "react";
 import { Formik } from "formik";
-import { TextField, Button } from "@material-ui/core";
+import { TextField, Button, Box, Container } from "@material-ui/core";
 
-const LoginForm = ({ setToken, token }) => {
+const LoginForm = ({ setToken }) => {
     return (
-        <div>
+        <div className="container">
             <Formik
                 initialValues={{ username: "", password: "" }}
                 onSubmit={async (values, actions) => {
@@ -26,37 +26,57 @@ const LoginForm = ({ setToken, token }) => {
                 }}
             >
                 {(props) => (
-                    <form onSubmit={props.handleSubmit}>
+                    <div className="box-login">
                         <div>
-                            <TextField
-                                type="text"
-                                onChange={props.handleChange}
-                                onBlur={props.handleBlur}
-                                value={props.values.name}
-                                name="username"
-                                placeholder="Username"
-                            />
-                            {props.errors.name && (
-                                <div id="feedback">{props.errors.name}</div>
-                            )}
+                            <h1>Login:</h1>
                         </div>
-                        <div>
-                            <TextField
-                                type="password"
-                                onChange={props.handleChange}
-                                onBlur={props.handleBlur}
-                                value={props.values.name}
-                                name="password"
-                                placeholder="Password"
-                            />
-                            {props.errors.name && (
-                                <div id="feedback">{props.errors.name}</div>
-                            )}
-                        </div>
-                        <div>
-                            <Button type="submit">Submit</Button>
-                        </div>
-                    </form>
+                        <Box>
+                            <form onSubmit={props.handleSubmit}>
+                                <div>
+                                    <TextField
+                                        type="text"
+                                        onChange={props.handleChange}
+                                        onBlur={props.handleBlur}
+                                        value={props.values.name}
+                                        name="username"
+                                        placeholder="Username"
+                                    />
+                                    {props.errors.name && (
+                                        <div id="feedback">
+                                            {props.errors.name}
+                                        </div>
+                                    )}
+                                </div>
+                                <div>
+                                    <TextField
+                                        type="password"
+                                        onChange={props.handleChange}
+                                        onBlur={props.handleBlur}
+                                        value={props.values.name}
+                                        name="password"
+                                        placeholder="Password"
+                                    />
+                                    {props.errors.name && (
+                                        <div id="feedback">
+                                            {props.errors.name}
+                                        </div>
+                                    )}
+                                </div>
+                                <div>
+                                    <br />
+                                    <br />
+                                    <Button
+                                        variant="contained"
+                                        type="submit"
+                                        color="primary"
+                                        size="large"
+                                    >
+                                        Submit
+                                    </Button>
+                                </div>
+                            </form>
+                        </Box>
+                    </div>
                 )}
             </Formik>
         </div>

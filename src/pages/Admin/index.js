@@ -6,6 +6,10 @@ const Admin = () => {
     const localToken = localStorage.getItem("token");
     const [token, setToken] = useState(localToken);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const logOut = () => {
+        setToken(null);
+        localStorage.removeItem("token");
+    };
 
     useEffect(() => {
         if (token) setIsLoggedIn(true);
@@ -14,14 +18,14 @@ const Admin = () => {
     if (!token)
         return (
             <div>
-                <LoginForm setToken={setToken} token={token} />
+                <LoginForm setToken={setToken} />
             </div>
         );
 
     return (
         isLoggedIn && (
             <div>
-                <Button onClick={() => setToken(null)}>Logg ut</Button>
+                <Button onClick={logOut}>Logg ut</Button>
             </div>
         )
     );

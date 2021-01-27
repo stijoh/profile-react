@@ -188,6 +188,15 @@ a:hover {
     text-align: center;
 }
 
+.box-login {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin: 20px 0px;
+    text-align: center;
+}
+
 .box-header {
     background-color: white;
     padding: 20px;
@@ -215,6 +224,11 @@ a:hover {
 .list {
     list-style: none;
     padding-left: 0px;
+}
+
+.size {
+    height: 12px;
+    width: 12px;
 }
 
 .list-column {
@@ -249,7 +263,7 @@ video {
     object-fit: cover;
 }
 
-.btn {
+/* .btn {
     background-color: #006699;
     color: white;
     padding: 10px 15px;
@@ -259,7 +273,7 @@ video {
 
 .btn:hover {
     color: white;
-}
+} */
 
 @media only screen and (max-width: 600px) {
     .list-column {
