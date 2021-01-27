@@ -6,29 +6,23 @@ const LoginForm = ({ setToken, token }) => {
     return (
         <div>
             <Formik
-                initialValues={{ email: "", password: "" }}
+                initialValues={{ username: "", password: "" }}
                 onSubmit={async (values, actions) => {
                     const requestOptions = {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
-                            user: {
-                                email: values.email,
-                                password: values.password,
-                            },
+                            username: values.username,
+                            password: values.password,
                         }),
                     };
                     const response = await fetch(
-                        "http://192.168.0.100:3500/api/v1/sign_in",
+                        "http://192.168.0.100:3500/login",
                         requestOptions
                     );
                     const data = await response.json();
-                    console.log(data);
-                    setToken(data.data.user.authentication_token);
-                    localStorage.setItem(
-                        "token",
-                        data.data.user.authentication_token
-                    );
+                    setToken(data.token);
+                    localStorage.setItem("token", data.token);
                 }}
             >
                 {(props) => (
@@ -39,7 +33,8 @@ const LoginForm = ({ setToken, token }) => {
                                 onChange={props.handleChange}
                                 onBlur={props.handleBlur}
                                 value={props.values.name}
-                                name="email"
+                                name="username"
+                                placeholder="Username"
                             />
                             {props.errors.name && (
                                 <div id="feedback">{props.errors.name}</div>
@@ -52,6 +47,7 @@ const LoginForm = ({ setToken, token }) => {
                                 onBlur={props.handleBlur}
                                 value={props.values.name}
                                 name="password"
+                                placeholder="Password"
                             />
                             {props.errors.name && (
                                 <div id="feedback">{props.errors.name}</div>

@@ -7,9 +7,7 @@ function Home() {
     const [skills, setSkills] = useState([]);
 
     const fetchData = async () => {
-        const response = await fetch(
-            "http://127.0.0.1:3500/api/v1/skills/?user_email=stian.a.johansen@gmail.com&user_token="
-        );
+        const response = await fetch("http://192.168.0.100:3500/skills");
         const data = await response.json();
         console.log(data);
         setSkills(data);
