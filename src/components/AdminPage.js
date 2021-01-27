@@ -1,18 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import AdminNavBar from "./AdminNavBar";
 import AddSkill from "./AddSkill";
 import AddLatest from "./AddLatest";
 
-const AdminPage = ({ logOut, page, setPage }) => {
-    const updatePage = (newpage) => setPage(newpage);
+const AdminPage = ({ logOut }) => {
+    const [addSkill, setAddSkill] = useState(true);
+    const [addLatest, setAddLatest] = useState(false);
 
-    useEffect(() => {}, [updatePage]);
+    const skillPage = () => {
+        setAddSkill(true);
+        setAddLatest(false);
+    };
 
+    const latestPage = () => {
+        setAddLatest(true);
+        setAddSkill(false);
+    };
     return (
         <div>
-            <AdminNavBar logOut={logOut} updatePage={updatePage} />
-            {page === "AddSkill" && <AddSkill />}
-            {page === "AddLatest" && <AddLatest />}
+            <AdminNavBar
+                logOut={logOut}
+                skillPage={skillPage}
+                latestPage={latestPage}
+            />
+            {addSkill && <AddSkill />}
+            {addLatest && <AddLatest />}
         </div>
     );
 };

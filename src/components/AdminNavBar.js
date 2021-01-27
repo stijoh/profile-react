@@ -17,7 +17,7 @@ const AdminNavBar = ({ logOut, latestPage, skillPage }) => {
     return (
         <div>
             <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">Portfolio Admin</NavbarBrand>
+                <NavbarBrand href="/admin">Portfolio Admin</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
