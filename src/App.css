@@ -29,7 +29,7 @@ a {
     color: black;
 }
 a:hover {
-    color: black;
+    color: #f3f1f9;
 }
 
 .container {
@@ -256,7 +256,7 @@ a:hover {
     color: #006699;
 }
 .list i:hover {
-    color: black;
+    color: #9381c9;
 }
 
 video {
@@ -273,6 +273,7 @@ video {
 
 .btn:hover {
     color: white;
+    background-color: #9381c9;
 }
 
 @media only screen and (max-width: 600px) {
